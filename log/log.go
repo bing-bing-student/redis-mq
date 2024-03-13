@@ -9,12 +9,10 @@ import (
 )
 
 type Logger interface {
-	Debug(v ...interface{})
 	Error(v ...interface{})
 	Warn(v ...interface{})
 	Info(v ...interface{})
-
-	
+	Debug(v ...interface{})
 	ErrorFormat(format string, v ...interface{})
 	WarnFormat(format string, v ...interface{})
 	InfoFormat(format string, v ...interface{})
