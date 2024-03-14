@@ -89,19 +89,19 @@ type zapLoggerWrapper struct {
 }
 
 func (w *zapLoggerWrapper) ErrorFormat(format string, args ...interface{}) {
-	ErrorFormat(format, args...)
+	w.SugaredLogger.Errorf(format, args...)
 }
 
 func (w *zapLoggerWrapper) WarnFormat(format string, args ...interface{}) {
-	ErrorFormat(format, args...)
+	w.SugaredLogger.Warnf(format, args...)
 }
 
 func (w *zapLoggerWrapper) InfoFormat(format string, args ...interface{}) {
-	ErrorFormat(format, args...)
+	w.SugaredLogger.Infof(format, args...)
 }
 
 func (w *zapLoggerWrapper) DebugFormat(format string, args ...interface{}) {
-	ErrorFormat(format, args...)
+	w.SugaredLogger.Debugf(format, args...)
 }
 
 func newSugarLogger(options Options) *zapLoggerWrapper {
