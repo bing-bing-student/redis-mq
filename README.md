@@ -2,6 +2,16 @@
 
 使用此 sdk 进行实践前，建议先行了解与 redis streams 有关的特性。[redis streams](https://redis.io/docs/data-types/streams/)
 
+## 项目导入
+
+使用go mod tidy可能会出现导入的是以前的依赖，如果出现这种情况，建议使用`手动下载和模块替换`。将本项目的源码下载到本地，然后使用replace指令进行替换。go.mod 文件如下所示：
+
+```
+replace github.com/bing-bing-student/redis-mq => 本地目录:/GOPATH/pkg/mod/github.com/bing-bing-student/redis-mq
+```
+
+最后使用go mod tidy 进行依赖替换
+
 ## 基本使用
 
 ### 生产者
